@@ -2,7 +2,7 @@ import { ButtonBordered } from "../Buttons/Buttons";
 
 export default function Hero() {
   return (
-    <div>
+    <div className="bg-black text-white">
       <div className="">
         <div className="">
           <div className=""></div>

@@ -11,9 +11,9 @@ export default function NavigationBar() {
   };
 
   return (
-    <header className="bg-chinese-black text-white">
+    <header className="bg-black text-white">
       {/* Small Screen Layout */}
-      <nav className="text-white flex items-center justify-between w-[90%] mx-auto py-6 border-b-6 border-indigo-500 md:hidden">
+      <nav className="text-white bg-black flex items-center justify-between w-[90%] mx-auto py-6 border-b-4 border-chinese-black md:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className={`transform transition-transform duration-300 ${
@@ -41,7 +41,7 @@ export default function NavigationBar() {
       </nav>
 
       {/* Medium Screen Layout */}
-      <nav className="hidden md:flex items-center justify-between w-[85%] mx-auto py-6 border-b-6 border-indigo-500 lg:hidden">
+      <nav className="hidden md:text-white md:bg-black md:flex items-center justify-between md:w-[85%] mx-auto py-6 md:border-b-4 md:border-chinese-black lg:hidden">
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -71,7 +71,7 @@ export default function NavigationBar() {
       </nav>
 
       {/* Large Screen Layout */}
-      <nav className="hidden lg:flex lg:justify-between lg:items-center lg:w-[80%] mx-auto py-6 border-b-6 border-indigo-500">
+      <nav className="hidden lg:text-white lg:bg-black lg:flex lg:justify-between lg:items-center lg:w-[80%] mx-auto py-6 lg:border-b-4 lg:border-chinese-black">
         <div className="font-bold text-2xl transform transition-transform duration-300 hover:translate-x-2 hover:text-peru">
           <NavLink to="/">audiophile</NavLink>
         </div>
@@ -144,7 +144,9 @@ export default function NavigationBar() {
 
       {/* Dropdown Menu for Small and Medium Screens */}
       <div
-        className={`lg:hidden ${menuOpen ? "block" : "hidden"} bg-[#171819]`}
+        className={`lg:hidden ${
+          menuOpen ? "block" : "hidden"
+        } bg-chinese-black`}
       >
         <ul className="flex flex-col space-y-4 text-center md:text-start md:mx-12">
           <li>
