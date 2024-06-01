@@ -4,14 +4,14 @@ import { useState } from "react";
 
 export default function NavigationBar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
+  const [cartCount, setCartCount] = useState(4);
 
   const addItemToCart = () => {
     setCartCount(cartCount + 1);
   };
 
   return (
-    <header className="bg-black text-white">
+    <header className="bg-black text-white fixed top-0 left-0 w-full z-50">
       {/* Small Screen Layout */}
       <nav className="text-white bg-black flex items-center justify-between w-[90%] mx-auto py-6 border-b-4 border-chinese-black md:hidden">
         <button
@@ -25,14 +25,14 @@ export default function NavigationBar() {
         <div className="font-bold text-lg transform transition-transform duration-300 hover:translate-x-2 hover:text-peru">
           <NavLink to="/">audiophile</NavLink>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center relative">
           <NavLink to="#">
             <IoCartOutline
               size={21}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 inline-block w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -55,14 +55,14 @@ export default function NavigationBar() {
             <NavLink to="/">audiophile</NavLink>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center relative">
           <NavLink to="#">
             <IoCartOutline
               size={23}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 inline-block w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -127,14 +127,14 @@ export default function NavigationBar() {
             </li>
           </ul>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center relative">
           <NavLink to="#">
             <IoCartOutline
               size={25}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 inline-block w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -146,10 +146,10 @@ export default function NavigationBar() {
       <div
         className={`lg:hidden ${
           menuOpen ? "block" : "hidden"
-        } bg-chinese-black`}
+        } bg-chinese-black w-[90%] mx-auto md:w-[50%] bg-opacity-50`}
       >
-        <ul className="flex flex-col space-y-4 text-center md:text-start md:mx-12">
-          <li>
+        <ul className="flex flex-col space-y-4 text-center md:text-start md:w-2/3 md:bg-black p-4 rounded-lg shadow-lg mx-auto">
+          <li className="transition-transform duration-300 md:duration-500 md:ml-0">
             <NavLink
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -162,7 +162,7 @@ export default function NavigationBar() {
               HOME
             </NavLink>
           </li>
-          <li>
+          <li className="transition-transform duration-300 md:duration-500 md:ml-4">
             <NavLink
               to="/headphones"
               onClick={() => setMenuOpen(false)}
@@ -175,7 +175,7 @@ export default function NavigationBar() {
               HEADPHONES
             </NavLink>
           </li>
-          <li>
+          <li className="transition-transform duration-300 md:duration-500 md:ml-8">
             <NavLink
               to="/speakers"
               onClick={() => setMenuOpen(false)}
@@ -188,7 +188,7 @@ export default function NavigationBar() {
               SPEAKERS
             </NavLink>
           </li>
-          <li>
+          <li className="transition-transform duration-300 md:duration-500 md:ml-12">
             <NavLink
               to="/earphones"
               onClick={() => setMenuOpen(false)}

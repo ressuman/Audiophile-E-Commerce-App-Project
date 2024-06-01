@@ -31,6 +31,14 @@ export default withMT({
       fontFamily: {
         manrope: ["Manrope", "sans - serif"],
       },
+      backgroundImage: {
+        "hero-desktop":
+          "url('/src/assets/resources/home/desktop/image-hero.jpg')",
+        "hero-tablet":
+          "url('/src/assets/resources/home/tablet/image-header.jpg')",
+        "hero-mobile":
+          "url('/src/assets/resources/home/mobile/image-header.jpg')",
+      },
     },
   },
   plugins: [flowbitePlugin, daisyui],
