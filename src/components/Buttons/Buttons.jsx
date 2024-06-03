@@ -8,9 +8,17 @@ export const ButtonBordered = () => {
   );
 };
 
-export const ButtonOutline = () => {
+export const ButtonOutline1 = () => {
   return (
-    <button className="bg-white hover:bg-black text-black  font-normal lg:text-sm md:text-xs text-xs hover:text-white py-2 px-4 border border-black hover:border-white">
+    <button className="bg-transparent hover:bg-black text-chinese-black  font-normal lg:text-sm md:text-xs text-xs hover:text-white py-2 px-4 border border-chinese-black">
+      SEE PRODUCT
+    </button>
+  );
+};
+
+export const ButtonOutline2 = () => {
+  return (
+    <button className="bg-black hover:bg-yankees-blue text-white  font-normal lg:text-sm md:text-xs text-xs py-2 px-4">
       SEE PRODUCT
     </button>
   );

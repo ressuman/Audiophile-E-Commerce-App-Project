@@ -11,9 +11,9 @@ export const Cards = () => {
           <img
             src={CardHeadphone}
             alt="hp"
-            className="absolute top-[0.5rem] md:top-[1rem] lg:top-[-2rem] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
           />
-          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:ml-6">
+          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:ml-6 rounded-md">
             <p className=" font-semibold pt-20 pb-2 text-black">HEADPHONES</p>
             <ButtonNoOutline size={20} />
           </div>
@@ -23,9 +23,9 @@ export const Cards = () => {
           <img
             src={CardSpeaker}
             alt="sp"
-            className="absolute top-[0.5rem] md:top-[1rem] lg:top-[-2rem] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
           />
-          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:ml-1">
+          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:ml-1 rounded-md">
             <p className=" font-semibold pt-20 pb-2 text-black">SPEAKERS</p>
             <ButtonNoOutline />
           </div>
@@ -35,9 +35,9 @@ export const Cards = () => {
           <img
             src={CardEarphone}
             alt="ep"
-            className="absolute top-[0.5rem] md:top-[1rem] lg:top-[-2rem] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
           />
-          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:mr-6">
+          <div className="bg-flash-white w-full lg:w-[90%] mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg lg:mr-6 rounded-md">
             <p className="font-semibold pt-20 pb-2 text-black">EARPHONES</p>
             <ButtonNoOutline />
           </div>

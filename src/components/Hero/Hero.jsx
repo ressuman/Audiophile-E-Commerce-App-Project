@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="text-white w-full">
       <div className="">
-        <div className="bg-hero-mobile md:bg-hero-tablet lg:bg-hero-desktop lg:bg-cover lg:bg-center lg:h-[650px] lg:flex lg:justify-center lg:flex-col md:flex md:flex-col md:items-center md:bg-cover md:h-[730px] md:pt-64 bg-cover bg-center flex flex-col lg:items-start items-center h-[650px] pt-60 lg:pt-0">
+        <div className="bg-home-hero-mobile md:bg-home-hero-tablet lg:bg-home-hero-desktop lg:bg-cover lg:bg-center lg:h-[650px] lg:flex lg:justify-center lg:flex-col md:flex md:flex-col md:items-center md:bg-cover md:h-[730px] md:pt-64 bg-cover bg-center flex flex-col lg:items-start items-center h-[650px] pt-60 lg:pt-0">
           <div className="lg:mb-5 lg:mt-16 lg:mx-[7.5rem] text-center md:text-left mb-6 md:mb-8">
             <p className="text-sm font-bold uppercase tracking-widest">
               NEW PRODUCT
