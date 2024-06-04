@@ -21,7 +21,7 @@ export default function Display() {
           alt="ZX9 Speaker"
           width="40%"
           height="40%"
-          className="absolute top-[33%] lg:top-[63%] md:top-[24%] left-[50.6%] lg:left-[30.6%] md:left-[50%] transform -translate-x-1/2  -translate-y-1/2 "
+          className="absolute top-[33%] lg:top-[63%] md:top-[24%] left-[50.6%] lg:left-[28%] md:left-[50%] transform -translate-x-1/2  -translate-y-1/2 "
         />
         <div className="relative z-10 ml-[0rem] lg:ml-[36rem] md:ml-[8rem] lg:text-start md:text-center text-center text-white max-w-sm md:mt-[25rem] lg:mt-0 mt-[30rem]">
           <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold mb-8">
