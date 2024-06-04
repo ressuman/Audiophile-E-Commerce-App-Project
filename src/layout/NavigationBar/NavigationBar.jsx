@@ -11,7 +11,7 @@ export default function NavigationBar() {
   };
 
   return (
-    <header className="bg-black text-white fixed top-0 left-0 w-full z-50">
+    <header className="bg-black text-white sticky top-0 left-0 w-full z-50">
       {/* Small Screen Layout */}
       <nav className="text-white bg-black flex items-center justify-between w-[90%] mx-auto py-6 border-b-4 border-chinese-black md:hidden">
         <button
@@ -148,7 +148,7 @@ export default function NavigationBar() {
           menuOpen ? "block" : "hidden"
         } bg-chinese-black w-[90%] mx-auto md:w-[50%] bg-opacity-50`}
       >
-        <ul className="flex flex-col space-y-4 text-center md:text-start md:w-2/3 md:bg-black p-4 rounded-lg shadow-lg mx-auto">
+        <ul className="flex flex-col space-y-4 text-center md:text-start md:w-2/3 md:bg-black py-4 rounded-lg shadow-lg mx-auto z-30">
           <li className="transition-transform duration-300 md:duration-500 md:ml-0">
             <NavLink
               to="/"
@@ -162,7 +162,7 @@ export default function NavigationBar() {
               HOME
             </NavLink>
           </li>
-          <li className="transition-transform duration-300 md:duration-500 md:ml-4">
+          <li className="transition-transform duration-300 md:duration-500 md:ml-10">
             <NavLink
               to="/headphones"
               onClick={() => setMenuOpen(false)}
@@ -175,7 +175,7 @@ export default function NavigationBar() {
               HEADPHONES
             </NavLink>
           </li>
-          <li className="transition-transform duration-300 md:duration-500 md:ml-8">
+          <li className="transition-transform duration-300 md:duration-500 md:ml-0">
             <NavLink
               to="/speakers"
               onClick={() => setMenuOpen(false)}
@@ -188,7 +188,7 @@ export default function NavigationBar() {
               SPEAKERS
             </NavLink>
           </li>
-          <li className="transition-transform duration-300 md:duration-500 md:ml-12">
+          <li className="transition-transform duration-300 md:duration-500 md:ml-10">
             <NavLink
               to="/earphones"
               onClick={() => setMenuOpen(false)}

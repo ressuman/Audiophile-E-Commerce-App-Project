@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import DesktopZX9Speaker from "../../assets/resources/home/desktop/image-speaker-zx9.png";
 import { ButtonOutline1, ButtonOutline2 } from "../Buttons/Buttons";
 
@@ -31,7 +32,9 @@ export default function Display() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <ButtonOutline2 />
+          <Link to="/speakers">
+            <ButtonOutline2 />
+          </Link>
         </div>
       </div>
 
@@ -41,7 +44,9 @@ export default function Display() {
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
             ZX7 SPEAKER
           </h3>
-          <ButtonOutline1 />
+          <Link to="/speakers">
+            <ButtonOutline1 />
+          </Link>
         </div>
       </div>
 
@@ -52,7 +57,9 @@ export default function Display() {
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black">
             YX1 EARPHONES
           </h3>
-          <ButtonOutline1 />
+          <Link to="/earphones">
+            <ButtonOutline1 />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ButtonBordered } from "../Buttons/Buttons";
 
 export default function Hero() {
@@ -22,7 +23,9 @@ export default function Hero() {
             </p>
           </div>
           <div className="lg:mx-[10%]">
-            <ButtonBordered />
+            <Link to="/headphones">
+              <ButtonBordered />
+            </Link>
           </div>
         </div>
       </div>

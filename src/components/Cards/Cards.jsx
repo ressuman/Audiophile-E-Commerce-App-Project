@@ -11,7 +11,7 @@ export const Cards = () => {
           <img
             src={CardHeadphone}
             alt="hp"
-            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[0%] w-1/2 md:w-[75%]"
           />
           <div className="bg-flash-white w-full mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg  rounded-md">
             <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
@@ -25,7 +25,7 @@ export const Cards = () => {
           <img
             src={CardSpeaker}
             alt="sp"
-            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[0%] w-1/2 md:w-[75%]"
           />
           <div className="bg-flash-white w-full mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg  rounded-md">
             <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
@@ -39,7 +39,7 @@ export const Cards = () => {
           <img
             src={CardEarphone}
             alt="ep"
-            className="absolute top-[3%] md:top-[3%] lg:top-[-13%] w-1/2 md:w-[75%]"
+            className="absolute top-[3%] md:top-[3%] lg:top-[0%] w-1/2 md:w-[75%]"
           />
           <div className="bg-flash-white w-full mt-12 flex flex-col items-center py-2 md:py-1 lg:py-8 md:text-lg  rounded-md">
             <p className="font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">

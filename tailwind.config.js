@@ -33,30 +33,33 @@ export default withMT({
         manrope: ["Manrope", "sans - serif"],
       },
       backgroundImage: {
-        "home-hero-desktop":
-          "url('/src/assets/resources/home/desktop/image-hero.jpg')",
-        "home-hero-tablet":
-          "url('/src/assets/resources/home/tablet/image-header.jpg')",
-        "home-hero-mobile":
-          "url('/src/assets/resources/home/mobile/image-header.jpg')",
+        "home-hero-desktop": "url('/src/assets/home/desktop/image-hero.jpg')",
+        "home-hero-tablet": "url('/src/assets/home/tablet/image-header.jpg')",
+        "home-hero-mobile": "url('/src/assets/home/mobile/image-header.jpg')",
         "home-display-desktop-speaker":
-          "url('/src/assets/resources/home/desktop/image-speaker-zx7.jpg')",
+          "url('/src/assets/home/desktop/image-speaker-zx7.jpg')",
         "home-display-tablet-speaker":
-          "url('/src/assets/resources/home/tablet/image-speaker-zx7.jpg')",
+          "url('/src/assets/home/tablet/image-speaker-zx7.jpg')",
         "home-display-mobile-speaker":
-          "url('/src/assets/resources/home/mobile/image-speaker-zx7.jpg')",
+          "url('/src/assets/home/mobile/image-speaker-zx7.jpg')",
         "home-display-desktop-earphone":
-          "url('/src/assets/resources/home/desktop/image-earphones-yx1.jpg')",
+          "url('/src/assets/home/desktop/image-earphones-yx1.jpg')",
         "home-display-tablet-earphone":
-          "url('/src/assets/resources/home/tablet/image-earphones-yx1.jpg')",
+          "url('/src/assets/home/tablet/image-earphones-yx1.jpg')",
         "home-display-mobile-earphone":
-          "url('/src/assets/resources/home/mobile/image-earphones-yx1.jpg')",
+          "url('/src/assets/home/mobile/image-earphones-yx1.jpg')",
         "footer-image-desktop":
-          "url('/src/assets/resources/shared/desktop/image-best-gear.jpg')",
+          "url('/src/assets/shared/desktop/image-best-gear.jpg')",
         "footer-image-tablet":
-          "url('/src/assets/resources/shared/tablet/image-best-gear.jpg')",
+          "url('/src/assets/shared/tablet/image-best-gear.jpg')",
         "footer-image-mobile":
-          "url('/src/assets/resources/shared/mobile/image-best-gear.jpg')",
+          "url('/src/assets/shared/mobile/image-best-gear.jpg')",
+        // "headphones-products-desktop":
+        //   "url('/src/assets/shared/desktop/image-best-gear.jpg')",
+        // "headphones-products-tablet":
+        //   "url('/src/assets/shared/tablet/image-best-gear.jpg')",
+        // "headphones-products-mobile":
+        //   "url('/src/assets/shared/mobile/image-best-gear.jpg')",
       },
     },
   },
