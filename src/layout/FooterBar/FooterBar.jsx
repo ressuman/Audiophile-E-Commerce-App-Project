@@ -5,7 +5,7 @@ export const FooterBar = () => {
     <div className="">
       <div className="">
         <div className="my-[10rem] w-[90%] md:w-[85%] lg:w-[80%] mx-auto flex flex-col lg:flex-row items-center gap-4 md:gap-2 lg:gap-6">
-          <div className="order-2 lg:order-1 flex justify-center items-start flex-col rounded-md h-[25rem] md:h-[18rem] lg:h-[30rem] w-full lg:w-1/2 p-2 md:p-10 lg:p-0 gap-8">
+          <div className="order-2 lg:order-1 flex justify-center items-start flex-col rounded-md h-[25rem] md:gray w-full lg:w-1/2 p-2 md:p-10 lg:p-0 gap-8">
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black uppercase text-center lg:text-start md:px-6 lg:px-0">
               Bringing you the <span className="text-peru">best</span> audio
               gear
@@ -89,14 +89,14 @@ export const FooterBar = () => {
             <div className="mx-auto mt-10">
               <div className="flex flex-col md:flex-row lg:flex-row items-center md:items-end lg:items-center lg:justify-between gap-8">
                 <div className="flex flex-col md:justify-center lg:justify-between md:items-start w-full md:w-full lg:w-1/2 lg:gap-8 text-center md:text-start">
-                  <p className="text-flash-white text-xs lg:text-[12px] mb-10 lg:mb-0">
+                  <p className="text-[#808080] text-xs lg:text-[12px] mb-10 lg:mb-0">
                     Audiophile is an all-in-one stop to fulfill your audio
                     needs. We&apos;re a small team of music lovers and sound
                     specialists who are devoted to helping you get the most out
                     of personal audio. Come and visit our demo facility -
                     We&apos;re open 7 days a week.
                   </p>
-                  <p className="text-flash-white text-xs lg:text-[12px]">
+                  <p className="text-[#808080] text-xs lg:text-[12px]">
                     &copy; 2024. All Rights Reserved
                   </p>
                 </div>

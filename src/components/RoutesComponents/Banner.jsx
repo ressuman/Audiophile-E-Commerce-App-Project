@@ -21,7 +21,7 @@ export default function Banner() {
   }
 
   return (
-    <div className="bg-black text-white ">
+    <div className="bg-black text-white mb-20">
       <div className=" w-[90%] md:w-[85%] lg:w-[80%] mx-auto justify-center flex items-center bg-black text-white lg:py-32 md:py-24 py-20">
         <h1 className="uppercase font-bold lg:text-4xl md:text-3xl text-2xl">
           {headerText}

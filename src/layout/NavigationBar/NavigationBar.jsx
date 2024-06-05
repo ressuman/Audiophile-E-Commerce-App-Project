@@ -32,7 +32,7 @@ export default function NavigationBar() {
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-peru text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -62,7 +62,7 @@ export default function NavigationBar() {
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-peru text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -134,7 +134,7 @@ export default function NavigationBar() {
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
             />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 text-white text-xs text-center rounded-full">
+              <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-peru text-white text-xs text-center rounded-full">
                 {cartCount}
               </span>
             )}

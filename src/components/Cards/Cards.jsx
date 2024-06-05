@@ -1,7 +1,8 @@
 import { ButtonNoOutline } from "../Buttons/Buttons";
-import CardHeadphone from "../../assets/resources/shared/desktop/image-category-thumbnail-headphones.png";
-import CardSpeaker from "../../assets/resources/shared/desktop/image-category-thumbnail-speakers.png";
-import CardEarphone from "../../assets/resources/shared/desktop/image-category-thumbnail-earphones.png";
+import CardHeadphone from "/images/shared/desktop/image-category-thumbnail-headphones.png";
+import CardSpeaker from "/images/shared/desktop/image-category-thumbnail-speakers.png";
+import CardEarphone from "/images/shared/desktop/image-category-thumbnail-earphones.png";
+import { Link } from "react-router-dom";
 
 export const Cards = () => {
   return (
@@ -17,7 +18,9 @@ export const Cards = () => {
             <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
               HEADPHONES
             </p>
-            <ButtonNoOutline size={20} />
+            <Link to="/headphones">
+              <ButtonNoOutline />
+            </Link>
           </div>
         </div>
 
@@ -31,7 +34,9 @@ export const Cards = () => {
             <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
               SPEAKERS
             </p>
-            <ButtonNoOutline />
+            <Link to="/speakers">
+              <ButtonNoOutline />
+            </Link>
           </div>
         </div>
 
@@ -45,7 +50,9 @@ export const Cards = () => {
             <p className="font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
               EARPHONES
             </p>
-            <ButtonNoOutline />
+            <Link to="/earphones">
+              <ButtonNoOutline />
+            </Link>
           </div>
         </div>
       </div>

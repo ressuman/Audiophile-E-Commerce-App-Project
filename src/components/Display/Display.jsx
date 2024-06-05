@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DesktopZX9Speaker from "../../assets/resources/home/desktop/image-speaker-zx9.png";
+import DesktopZX9Speaker from "/images/home/desktop/image-speaker-zx9.png";
 import { ButtonOutline1, ButtonOutline2 } from "../Buttons/Buttons";
 
 export default function Display() {
