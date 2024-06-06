@@ -8,11 +8,14 @@ import { Speakers } from "./pages/Speakers/Speakers";
 import { Earphones } from "./pages/Earphones/Earphones";
 import Error from "./pages/Error/Error";
 import { ProductDetails } from "./pages/ProductDetails/ProductDetails";
+import FadeInSection from "./utils/FadeInAnimation";
 
 export default function App() {
   return (
     <div>
-      <NavigationBar />
+      <FadeInSection>
+        <NavigationBar />
+      </FadeInSection>
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,10 +25,19 @@ export default function App() {
         <Route path="/speakers/:slug" element={<ProductDetails />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/earphones/:slug" element={<ProductDetails />} />
-        <Route path="*" element={<Error />} />
+        <Route
+          path="*"
+          element={
+            <FadeInSection>
+              <Error />
+            </FadeInSection>
+          }
+        />
       </Routes>
 
-      <FooterBar />
+      <FadeInSection>
+        <FooterBar />
+      </FadeInSection>
     </div>
   );
 }

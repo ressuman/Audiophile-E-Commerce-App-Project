@@ -6,6 +6,7 @@ import CardEarphone from "/images/shared/desktop/image-category-thumbnail-earpho
 import { ButtonNoOutline } from "../../components/Buttons/Buttons";
 import { Link, useParams } from "react-router-dom";
 import data from "../../data/data.json";
+import FadeInSection from "../../utils/FadeInAnimation";
 
 export const HeadPhones = () => {
   const { slug } = useParams();
@@ -14,32 +15,8 @@ export const HeadPhones = () => {
   const productZx9 = data[5];
   const productYx1 = data[0];
 
-  // const isProductXx991Available = productXx991.slug === slug;
-  // const isProductZx9Available = productZx9.slug === slug;
-  // const isProductYx1Available = productYx1.slug === slug;
-
-  // if (
-  //   !isProductXx991Available &&
-  //   !isProductZx9Available &&
-  //   !isProductYx1Available
-  // ) {
-  //   return <div>Product not found</div>;
-  // }
-
-  // if (!isProductXx991Available) {
-  //   return <div>Product {productXx991.name} not found</div>;
-  // }
-
-  // if (!isProductZx9Available) {
-  //   return <div>Product {productZx9.name} not found</div>;
-  // }
-
-  // if (!isProductYx1Available) {
-  //   return <div>Product {productYx1.name} not found</div>;
-  // }
-
   return (
-    <>
+    <FadeInSection>
       <Banner />
       <HeadPhoneProducts />
       <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto lg:text-center py-8 lg:py-28">
@@ -93,6 +70,6 @@ export const HeadPhones = () => {
           </div>
         </div>
       </div>
-    </>
+    </FadeInSection>
   );
 };

@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-section {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  -webkit-transition: opacity 4s ease-out, transform 4s ease-out;
+  -moz-transition: opacity 4s ease-out, transform 4s ease-out;
+  -ms-transition: opacity 4s ease-out, transform 4s ease-out;
+  -o-transition: opacity 4s ease-out, transform 4s ease-out;
+  transition: opacity 4s ease-out, transform 4s ease-out;
+}
+
+.fade-section.is-visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.fade-section.is-hidden {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+}

@@ -10,14 +10,6 @@ export const HeadPhoneProducts = () => {
   const productXx992 = data[3];
   const productXx59 = data[1];
 
-  // const isProductXx991Available = productXx991.find(
-  //   (item) => item.slug === slug
-  // );
-  // const isProductXx992Available = productXx992.find(
-  //   (item) => item.slug === slug
-  // );
-  // const isProductXx59Available = productXx59.find((item) => item.slug === slug);
-
   const isDesktop = useMediaQuery({ minWidth: 1161 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1160 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -31,16 +23,6 @@ export const HeadPhoneProducts = () => {
       return new URL(`${product.categoryImage.mobile}`, import.meta.url).href;
     }
   };
-
-  // if (!isProductXx991Available) {
-  //   return <div>Product ${productXx991.name} not found</div>;
-  // }
-  // if (!isProductXx992Available) {
-  //   return <div>Product ${productXx992.name} not found</div>;
-  // }
-  // if (!isProductXx59Available) {
-  //   return <div>Product ${productXx59.name} not found</div>;
-  // }
 
   return (
     <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto">
@@ -113,9 +95,6 @@ export const SpeakerProducts = () => {
   const productZx7 = data[4];
   const productZx9 = data[5];
 
-  // const isProductZx7Available = productZx7.find((item) => item.slug === slug);
-  // const isProductZx9Available = productZx9.find((item) => item.slug === slug);
-
   const isDesktop = useMediaQuery({ minWidth: 1161 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1160 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -129,13 +108,6 @@ export const SpeakerProducts = () => {
       return new URL(`${product.categoryImage.mobile}`, import.meta.url).href;
     }
   };
-
-  // if (!isProductZx7Available) {
-  //   return <div>Product ${productZx7.name} not found</div>;
-  // }
-  // if (!isProductZx9Available) {
-  //   return <div>Product ${productZx9.name} not found</div>;
-  // }
 
   return (
     <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto">
@@ -188,9 +160,6 @@ export const EarPhoneProducts = () => {
 
   const productYx1 = data[0];
 
-  // const isProductYx1Available = productYx1.find((item) => item.slug === slug);
-
-  // Determine screen size
   const isDesktop = useMediaQuery({ minWidth: 1161 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1160 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -204,10 +173,6 @@ export const EarPhoneProducts = () => {
       return new URL(`${product.categoryImage.mobile}`, import.meta.url).href;
     }
   };
-
-  // if (!isProductYx1Available) {
-  //   return <div>Product ${productYx1.name} not found</div>;
-  // }
 
   return (
     <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto">
