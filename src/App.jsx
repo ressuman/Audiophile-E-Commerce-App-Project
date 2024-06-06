@@ -7,6 +7,7 @@ import { HeadPhones } from "./pages/HeadPhones/HeadPhones";
 import { Speakers } from "./pages/Speakers/Speakers";
 import { Earphones } from "./pages/Earphones/Earphones";
 import Error from "./pages/Error/Error";
+import { ProductDetails } from "./pages/ProductDetails/ProductDetails";
 
 export default function App() {
   return (
@@ -16,8 +17,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/headphones" element={<HeadPhones />} />
+        <Route path="/headphones/:slug" element={<ProductDetails />} />
         <Route path="/speakers" element={<Speakers />} />
+        <Route path="/speakers/:slug" element={<ProductDetails />} />
         <Route path="/earphones" element={<Earphones />} />
+        <Route path="/earphones/:slug" element={<ProductDetails />} />
         <Route path="*" element={<Error />} />
       </Routes>
 
