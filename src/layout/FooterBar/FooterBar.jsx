@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 export const FooterBar = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="">
       <div className="">
@@ -97,7 +99,7 @@ export const FooterBar = () => {
                     We&apos;re open 7 days a week.
                   </p>
                   <p className="text-[#808080] text-xs lg:text-[12px]">
-                    &copy; 2024. All Rights Reserved
+                    &copy; {currentYear}. All Rights Reserved
                   </p>
                 </div>
                 <div className="flex justify-center md:justify-start lg:justify-end items-center w-full md:w-auto lg:w-1/2 mt-4 md:mt-0 lg:mt-0">

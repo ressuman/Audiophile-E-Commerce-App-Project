@@ -1,17 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { IoCartOutline, IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-export default function NavigationBar() {
+export default function NavigationBar({ toggleCart }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(4);
-
-  const addItemToCart = () => {
-    setCartCount(cartCount + 1);
-  };
+  const cartCount = useSelector((state) => state.cart.items.length);
 
   return (
-    <header className="bg-black text-white sticky top-0 left-0 w-full z-50">
+    <header className="bg-black text-white sticky top-0 left-0 w-full z-40">
       {/* Small Screen Layout */}
       <nav className="text-white bg-black flex items-center justify-between w-[90%] mx-auto py-6 border-b-4 border-chinese-black md:hidden">
         <button
@@ -26,7 +23,7 @@ export default function NavigationBar() {
           <NavLink to="/">audiophile</NavLink>
         </div>
         <div className="flex items-center relative">
-          <NavLink to="#">
+          <button onClick={toggleCart}>
             <IoCartOutline
               size={21}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
@@ -36,7 +33,7 @@ export default function NavigationBar() {
                 {cartCount}
               </span>
             )}
-          </NavLink>
+          </button>
         </div>
       </nav>
 
@@ -56,7 +53,7 @@ export default function NavigationBar() {
           </div>
         </div>
         <div className="flex items-center relative">
-          <NavLink to="#">
+          <button onClick={toggleCart}>
             <IoCartOutline
               size={23}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
@@ -66,7 +63,7 @@ export default function NavigationBar() {
                 {cartCount}
               </span>
             )}
-          </NavLink>
+          </button>
         </div>
       </nav>
 
@@ -128,7 +125,7 @@ export default function NavigationBar() {
           </ul>
         </div>
         <div className="flex items-center relative">
-          <NavLink to="#">
+          <button onClick={toggleCart}>
             <IoCartOutline
               size={25}
               className="transition-transform duration-300 hover:scale-110 hover:text-peru"
@@ -138,7 +135,7 @@ export default function NavigationBar() {
                 {cartCount}
               </span>
             )}
-          </NavLink>
+          </button>
         </div>
       </nav>
 

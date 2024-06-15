@@ -8,9 +8,12 @@ export const ButtonBordered = () => {
   );
 };
 
-export const ButtonBordered1 = () => {
+export const ButtonBordered1 = ({ handleAction }) => {
   return (
-    <button className="bg-peru hover:bg-tangelo text-white  font-normal lg:text-sm md:text-xs text-xs py-2 px-4 uppercase">
+    <button
+      onClick={handleAction}
+      className="bg-peru hover:bg-tangelo text-white  font-normal lg:text-sm md:text-xs text-xs py-2 px-4 uppercase"
+    >
       ADD TO CART
     </button>
   );

@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import data from "../../data/data.json";
 import {
   ButtonBordered,
@@ -11,12 +11,19 @@ import FadeInSection from "../../utils/FadeInAnimation";
 import CardHeadphone from "/images/shared/desktop/image-category-thumbnail-headphones.png";
 import CardSpeaker from "/images/shared/desktop/image-category-thumbnail-speakers.png";
 import CardEarphone from "/images/shared/desktop/image-category-thumbnail-earphones.png";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../redux/slice/cartSlice";
+import ToastAlert from "../../utils/toastAlert";
 
 export const ProductDetails = () => {
   const { slug } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [quantity, setQuantity] = useState(1);
+  const [toastMessage, setToastMessage] = useState("");
+  const [showToast, setShowToast] = useState(false);
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -27,10 +34,6 @@ export const ProductDetails = () => {
       setQuantity(quantity - 1);
     }
   };
-
-  const productXx991 = data[2];
-  const productZx9 = data[5];
-  const productYx1 = data[0];
 
   const products = [
     data[2], // productXx991
@@ -61,6 +64,19 @@ export const ProductDetails = () => {
     return <div>Product not found</div>;
   }
 
+  const handleAddToCart = (product, quantity) => {
+    dispatch(addItemToCart({ ...product, quantity }));
+
+    setToastMessage(
+      `${product.category} shop: product ${product.name} has been added to the cart`
+    );
+    setShowToast(true);
+
+    setTimeout(() => {
+      setShowToast(false);
+    }, 10000);
+  };
+
   const getCategoryLink = (product) => {
     switch (product.category) {
       case "headphones":
@@ -76,13 +92,44 @@ export const ProductDetails = () => {
 
   const newProducts = [data[3], data[5], data[0]];
 
+  const handleProductClick = (otherProductName) => {
+    let category = "";
+    if (
+      otherProductName.toLowerCase().includes("xx") ||
+      otherProductName.toLowerCase().includes("mark")
+    ) {
+      category = "headphones";
+    } else if (
+      otherProductName.toLowerCase().includes("zx") ||
+      otherProductName.toLowerCase().includes("speaker")
+    ) {
+      category = "speakers";
+    } else if (
+      otherProductName.toLowerCase().includes("yx") ||
+      otherProductName.toLowerCase().includes("earphone")
+    ) {
+      category = "earphones";
+    }
+
+    navigate(`/${category}`);
+  };
+
   return (
     <FadeInSection>
-      <div>
-        <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto mt-16 mb-28">
-          <Link to={getCategoryLink(product)} className="hover:underline">
+      <div className="">
+        <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto mt-10 mb-16 relative">
+          <Link
+            to={getCategoryLink(product)}
+            className="hover:underline hover:text-peru"
+          >
             Go Back
-          </Link>
+          </Link>{" "}
+          {showToast && (
+            <ToastAlert
+              message={toastMessage}
+              onClose={() => setShowToast(false)}
+            />
+          )}
         </div>
 
         <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto mb-[12rem]">
@@ -123,9 +170,9 @@ export const ProductDetails = () => {
                     +
                   </button>
                 </div>
-                <Link to="">
-                  <ButtonBordered1 />
-                </Link>
+                <ButtonBordered1
+                  handleAction={() => handleAddToCart(product, quantity)}
+                />
               </div>
             </div>
           </div>
@@ -202,8 +249,8 @@ export const ProductDetails = () => {
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {product.others.map((otherProduct, index) => (
-              <div key={index} className="">
+            {product.others.map((otherProduct) => (
+              <div key={otherProduct.slug} className="">
                 <img
                   src={getImageSource(otherProduct.image)}
                   alt={otherProduct.name}
@@ -213,9 +260,9 @@ export const ProductDetails = () => {
                   <h4 className="text-xl font-bold mt-8 mb-8">
                     {otherProduct.name}
                   </h4>
-                  <Link to={`/${otherProduct.slug}`}>
-                    <ButtonBordered />
-                  </Link>
+                  <ButtonBordered
+                    onClick={() => handleProductClick(otherProduct.name)}
+                  />
                 </div>
               </div>
             ))}
@@ -234,7 +281,7 @@ export const ProductDetails = () => {
                 <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
                   HEADPHONES
                 </p>
-                <Link to={`/headphones/${productXx991.slug}`}>
+                <Link to="/headphones">
                   <ButtonNoOutline />
                 </Link>
               </div>
@@ -250,7 +297,7 @@ export const ProductDetails = () => {
                 <p className=" font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
                   SPEAKERS
                 </p>
-                <Link to={`/speakers/${productZx9.slug}`}>
+                <Link to="/speakers">
                   <ButtonNoOutline />
                 </Link>
               </div>
@@ -266,7 +313,7 @@ export const ProductDetails = () => {
                 <p className="font-semibold pt-[33%] md:pt-[50%] pb-2 text-black">
                   EARPHONES
                 </p>
-                <Link to={`/earphones/${productYx1.slug}`}>
+                <Link to="/earphones">
                   <ButtonNoOutline />
                 </Link>
               </div>

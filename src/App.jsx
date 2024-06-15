@@ -6,16 +6,21 @@ import Home from "./pages/Home/Home";
 import { HeadPhones } from "./pages/HeadPhones/HeadPhones";
 import { Speakers } from "./pages/Speakers/Speakers";
 import { Earphones } from "./pages/Earphones/Earphones";
-import Error from "./pages/Error/Error";
+import NotFound from "./pages/NotFound/Notfound";
 import { ProductDetails } from "./pages/ProductDetails/ProductDetails";
 import FadeInSection from "./utils/FadeInAnimation";
+import { useState } from "react";
+import CartModal from "./components/cart/cartModal";
+import CheckOut from "./pages/CheckOut/CheckOut";
 
 export default function App() {
+  const [isCartOpen, setCartOpen] = useState(false);
+
+  const handleToggleCart = () => setCartOpen((prev) => !prev);
+
   return (
     <div>
-      <FadeInSection>
-        <NavigationBar />
-      </FadeInSection>
+      <NavigationBar toggleCart={handleToggleCart} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,11 +30,12 @@ export default function App() {
         <Route path="/speakers/:slug" element={<ProductDetails />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/earphones/:slug" element={<ProductDetails />} />
+        <Route path="/checkout" element={<CheckOut />} />
         <Route
           path="*"
           element={
             <FadeInSection>
-              <Error />
+              <NotFound />
             </FadeInSection>
           }
         />
@@ -38,6 +44,8 @@ export default function App() {
       <FadeInSection>
         <FooterBar />
       </FadeInSection>
+
+      <CartModal isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
     </div>
   );
 }
