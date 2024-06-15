@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { IoCartOutline, IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 export default function NavigationBar({ toggleCart }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -203,3 +204,7 @@ export default function NavigationBar({ toggleCart }) {
     </header>
   );
 }
+
+NavigationBar.propTypes = {
+  toggleCart: PropTypes.func.isRequired,
+};

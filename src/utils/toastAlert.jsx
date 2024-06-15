@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ToastAlert({ message, onClose }) {
   return (
     <div
@@ -42,3 +44,8 @@ export default function ToastAlert({ message, onClose }) {
     </div>
   );
 }
+
+ToastAlert.propTypes = {
+  message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

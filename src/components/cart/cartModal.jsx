@@ -11,6 +11,7 @@ import {
 } from "../../redux/slice/cartSlice";
 import ToastAlert from "../../utils/toastAlert";
 import { IoCartOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
 
 export default function CartModal({ isOpen, onClose }) {
   const dispatch = useDispatch();
@@ -159,3 +160,8 @@ export default function CartModal({ isOpen, onClose }) {
     </div>
   );
 }
+
+CartModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

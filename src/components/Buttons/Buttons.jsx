@@ -1,4 +1,5 @@
 import { IoChevronForwardSharp } from "react-icons/io5";
+import PropTypes from "prop-types";
 
 export const ButtonBordered = () => {
   return (
@@ -17,6 +18,10 @@ export const ButtonBordered1 = ({ handleAction }) => {
       ADD TO CART
     </button>
   );
+};
+
+ButtonBordered1.propTypes = {
+  handleAction: PropTypes.func.isRequired,
 };
 
 export const ButtonOutline1 = () => {
