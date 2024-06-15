@@ -14,6 +14,7 @@ import CardEarphone from "/images/shared/desktop/image-category-thumbnail-earpho
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/slice/cartSlice";
 import ToastAlert from "../../utils/toastAlert";
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 export const ProductDetails = () => {
   const { slug } = useParams();
@@ -320,6 +321,8 @@ export const ProductDetails = () => {
             </div>
           </div>
         </div>
+
+        <Testimonials />
       </div>
     </FadeInSection>
   );

@@ -2,11 +2,7 @@
 
 import flowbitePlugin from "flowbite/plugin";
 
-import withMT from "@material-tailwind/react/utils/withMT";
-
-//import daisyui from "daisyui";
-
-export default withMT({
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -60,5 +56,5 @@ export default withMT({
       },
     },
   },
-  plugins: [flowbitePlugin /*daisyui*/],
-});
+  plugins: [flowbitePlugin],
+};

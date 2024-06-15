@@ -94,6 +94,7 @@ export default function CartModal({ isOpen, onClose }) {
                           src={item.image.desktop}
                           width="60px"
                           alt={item.name}
+                          className="rounded-md"
                         />
                       </div>
                       <div className="flex justify-between w-full items-center gap-3">
@@ -123,7 +124,7 @@ export default function CartModal({ isOpen, onClose }) {
                   );
                 })}
                 <div className="flex justify-between items-center">
-                  <span className="text-[0.9rem] font-bold text-black">
+                  <span className="text-[0.9rem] font-normal uppercase text-black">
                     Total
                   </span>
                   <span className="text-[1rem] font-semibold text-black">

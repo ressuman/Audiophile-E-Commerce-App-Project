@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 
 export default function Banner() {
   const location = useLocation();
-  //const navigate = useNavigate();
 
   let headerText = "Welcome";
 

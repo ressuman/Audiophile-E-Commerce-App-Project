@@ -7,6 +7,7 @@ import { ButtonNoOutline } from "../../components/Buttons/Buttons";
 import { Link, useParams } from "react-router-dom";
 import data from "../../data/data.json";
 import FadeInSection from "../../utils/FadeInAnimation";
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 export const Earphones = () => {
   const { slug } = useParams();
@@ -70,6 +71,7 @@ export const Earphones = () => {
           </div>
         </div>
       </div>
+      <Testimonials />
     </FadeInSection>
   );
 };
