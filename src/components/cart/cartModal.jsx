@@ -101,7 +101,9 @@ export default function CartModal({ isOpen, onClose }) {
                       <div className="flex justify-between w-full items-center gap-3">
                         <div className="flex flex-col">
                           <p className="font-bold text-[0.8rem]">{item.name}</p>
-                          <p className="text-[0.8rem]">$ {item.price}</p>
+                          <p className="text-[0.8rem]">
+                            $ {item.price.toLocaleString("en-US")}
+                          </p>
                         </div>
                         <div className="flex items-center">
                           <button

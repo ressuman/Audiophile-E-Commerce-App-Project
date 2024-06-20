@@ -56,5 +56,14 @@ export default {
       },
     },
   },
-  plugins: [flowbitePlugin],
+  plugins: [
+    flowbitePlugin,
+    function ({ addUtilities }) {
+      addUtilities({
+        ".caret-color-peru": {
+          "caret-color": "#d87d4a",
+        },
+      });
+    },
+  ],
 };
