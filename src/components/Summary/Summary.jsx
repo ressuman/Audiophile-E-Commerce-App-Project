@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   cartItems as selectCartItems,
   totalAmount as selectTotalAmount,
@@ -6,13 +6,15 @@ import {
 import { formatCurrency } from "../../utils/formatCurrency";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCartOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import Submission from "../cart/Submission";
 
 export default function Summary() {
   const dispatch = useDispatch();
 
   const summaryCartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectTotalAmount);
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const state = {
     total: totalAmount,
@@ -39,6 +41,14 @@ export default function Summary() {
 
     calculateTotals();
   }, [summaryCartItems, dispatch]);
+
+  const handleButtonClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <div className="bg-white pb-12 pt-12 text-black lg:w-[30%] w-full rounded-md shadow-2xl">
@@ -105,18 +115,23 @@ export default function Summary() {
               </div>
             </div>
             <div className="mt-6">
-              <Link to="/checkout">
-                <button
-                  type="button"
-                  className="px-6 py-2.5 w-full bg-peru hover:bg-tangelo text-white uppercase"
-                >
-                  Continue & Pay
-                </button>
-              </Link>
+              <button
+                type="button"
+                className="px-6 py-2.5 w-full bg-peru hover:bg-tangelo text-white uppercase"
+                onClick={handleButtonClick}
+              >
+                Continue & Pay
+              </button>
             </div>
           </>
         )}
       </div>
+      <Submission
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        totalAmount={state.grandTotal}
+        summaryCartItems={summaryCartItems}
+      />
     </div>
   );
 }
