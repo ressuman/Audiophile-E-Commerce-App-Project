@@ -33,14 +33,14 @@ export default function FormField({
         const error = FormValidation(field, state[field], state);
         if (error) {
           errors[field] = error;
-          console.log(`Validation error in ${field}: ${error}`);
+          //console.log(`Validation error in ${field}: ${error}`);
         }
       }
     }
 
     // Check if there are any errors
     if (Object.keys(errors).length > 0) {
-      console.log("Errors found:", errors);
+      //console.log("Errors found:", errors);
       dispatch({ type: "SET_ERROR", field: "form", value: errors });
       return; // Exit the function if there are errors
     }

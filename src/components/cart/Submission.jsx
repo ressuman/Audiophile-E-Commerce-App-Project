@@ -35,9 +35,9 @@ export default function Submission({
           <p className="mb-4">
             You will receive an email confirmation shortly.
           </p>
-          <div className="rounded-md flex">
-            <div className="bg-flash-white w-[60%] flex flex-col justify-center items-center">
-              <div className="rounded-md flex flex-col py-4  w-[90%]">
+          <div className=" flex flex-col md:flex-row">
+            <div className="bg-flash-white w-full md:w-[60%] flex flex-col justify-center items-center rounded-t-md md:rounded-l-md">
+              <div className=" flex flex-col py-4  w-[90%]">
                 {showAllItems
                   ? summaryCartItems.map((item) => (
                       <div
@@ -47,7 +47,7 @@ export default function Submission({
                         <div>
                           <img
                             src={item.image.desktop}
-                            width="50px"
+                            width="40px"
                             alt={item.name}
                             className="rounded-md"
                           />
@@ -77,7 +77,7 @@ export default function Submission({
                         <div>
                           <img
                             src={item.image.desktop}
-                            width="50px"
+                            width="40px"
                             alt={item.name}
                             className="rounded-md"
                           />
@@ -102,15 +102,15 @@ export default function Submission({
                 <hr className="bg-black my-3" />
                 <button
                   onClick={toggleShowItems}
-                  className="text-chinese-black "
+                  className="text-chinese-black text-xs"
                 >
                   {showAllItems
-                    ? "Show Less"
+                    ? "View Less"
                     : `and ${summaryCartItems.length - 1} other item(s)`}
                 </button>
               </div>
             </div>
-            <div className="bg-black w-[40%] flex flex-col justify-center items-center">
+            <div className="bg-black w-full md:w-[40%] flex flex-col justify-center items-center rounded-b-md md:rounded-r-md">
               <p className="uppercase text-flash-white">Grand Total</p>
               <p className="font-semibold  text-white">
                 {formatCurrency(totalAmount)}
