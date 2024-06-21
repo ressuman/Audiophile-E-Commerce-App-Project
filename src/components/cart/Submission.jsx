@@ -17,7 +17,7 @@ export default function Submission({
 
   return (
     <div className="w-[90%] md:w-[85%] lg:w-[80%] mx-auto">
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="fixed inset-0 top-[13%] bg-black bg-opacity-50 flex justify-center items-center z-50">
         <div className="bg-white p-6 rounded-md shadow-lg relative w-[90%] md:w-[85%] lg:w-[80%] max-w-md mx-4">
           <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
@@ -100,14 +100,16 @@ export default function Submission({
                       </div>
                     ))}
                 <hr className="bg-black my-3" />
-                <button
-                  onClick={toggleShowItems}
-                  className="text-chinese-black text-xs"
-                >
-                  {showAllItems
-                    ? "View Less"
-                    : `and ${summaryCartItems.length - 1} other item(s)`}
-                </button>
+                {summaryCartItems.length > 1 && (
+                  <button
+                    onClick={toggleShowItems}
+                    className="text-chinese-black text-xs hover:underline"
+                  >
+                    {showAllItems
+                      ? "View Less"
+                      : `and ${summaryCartItems.length - 1} other item(s)`}
+                  </button>
+                )}
               </div>
             </div>
             <div className="bg-black w-full md:w-[40%] flex flex-col justify-center items-center rounded-b-md md:rounded-r-md">
