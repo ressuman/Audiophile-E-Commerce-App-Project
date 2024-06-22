@@ -7,9 +7,10 @@ import { formatCurrency } from "../../utils/formatCurrency";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCartOutline } from "react-icons/io5";
 import Submission from "../cart/Submission";
+import PropTypes from "prop-types";
 
-export default function Summary() {
-  const dispatch = useDispatch();
+export default function Summary({ formState, validateForm, dispatch }) {
+  const reduxDispatch = useDispatch();
 
   const summaryCartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectTotalAmount);
@@ -40,10 +41,19 @@ export default function Summary() {
     };
 
     calculateTotals();
-  }, [summaryCartItems, dispatch]);
+  }, [summaryCartItems, reduxDispatch]);
 
   const handleButtonClick = () => {
-    setModalOpen(true);
+    const formErrors = validateForm(formState);
+
+    if (Object.keys(formErrors).length === 0) {
+      setModalOpen(true);
+      dispatch({ type: "RESET_FORM" });
+    } else {
+      Object.keys(formErrors).forEach((field) => {
+        dispatch({ type: "SET_ERROR", field, value: formErrors[field] });
+      });
+    }
   };
 
   const handleCloseModal = () => {
@@ -135,3 +145,36 @@ export default function Summary() {
     </div>
   );
 }
+
+Summary.propTypes = {
+  formState: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    zipCode: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
+    city: PropTypes.string.isRequired,
+    country: PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }).isRequired,
+    paymentMethod: PropTypes.string.isRequired,
+    eMoneyNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    eMoneyPIN: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    errors: PropTypes.shape({
+      name: PropTypes.string,
+      email: PropTypes.string,
+      phoneNumber: PropTypes.string,
+      address: PropTypes.string,
+      zipCode: PropTypes.string,
+      city: PropTypes.string,
+      country: PropTypes.string,
+      paymentMethod: PropTypes.string,
+      eMoneyNumber: PropTypes.string,
+      eMoneyPIN: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  validateForm: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};

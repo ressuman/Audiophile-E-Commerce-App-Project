@@ -7,12 +7,7 @@ import Summary from "../Summary/Summary";
 import PropTypes from "prop-types";
 import { customStyles } from "../../utils/customStyles";
 
-export default function FormField({
-  state,
-  dispatch,
-  setShowToast,
-  setToastMessage,
-}) {
+export default function FormField({ state, dispatch }) {
   const countries = countryList().getData();
 
   const handleChange = (field, value) => {
@@ -21,47 +16,35 @@ export default function FormField({
     dispatch({ type: "SET_ERROR", field, value: error });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Initialize an empty errors object
+  const validateForm = (formState) => {
     const errors = {};
-
-    // Loop through each field in the state to validate
-    for (const field in state) {
+    Object.keys(formState).forEach((field) => {
       if (field !== "errors") {
-        const error = FormValidation(field, state[field], state);
+        const error = FormValidation(field, formState[field], formState);
         if (error) {
           errors[field] = error;
-          //console.log(`Validation error in ${field}: ${error}`);
         }
       }
+    });
+
+    if (!formState.paymentMethod) {
+      errors.paymentMethod = "Payment method is required";
     }
 
-    // Check if there are any errors
-    if (Object.keys(errors).length > 0) {
-      //console.log("Errors found:", errors);
-      dispatch({ type: "SET_ERROR", field: "form", value: errors });
-      return; // Exit the function if there are errors
+    if (formState.paymentMethod === "eMoney") {
+      if (!formState.eMoneyNumber) {
+        errors.eMoneyNumber = "e-Money Number is required";
+      }
+      if (!formState.eMoneyPin) {
+        errors.eMoneyPin = "e-Money PIN is required";
+      }
     }
-
-    // No errors, proceed with form submission
-    console.log("No errors found. Submitting form...");
-
-    setToastMessage("Order submitted successfully!");
-    setShowToast(true);
-
-    // Dispatch action to reset form state
-    dispatch({ type: "RESET_FORM" });
-    console.log("Form state has been reset.");
+    return errors;
   };
 
   return (
     <div className="mb-60">
-      <form
-        className="flex flex-col justify-center items-start lg:flex-row lg:justify-between lg:items-start lg:gap-6 gap-12"
-        onSubmit={handleSubmit}
-      >
+      <form className="flex flex-col justify-center items-start lg:flex-row lg:justify-between lg:items-start lg:gap-6 gap-12">
         <div className="bg-white pb-16 pt-16 text-black lg:w-[70%] w-full rounded-md shadow-2xl">
           <div className="w-[90%] mx-auto">
             <div className="font-extrabold text-4xl">
@@ -282,6 +265,11 @@ export default function FormField({
                         Cash on Delivery
                       </label>
                     </div>
+                    {state.errors.paymentMethod && (
+                      <p className="text-red-700 text-xs focus:ring-red-700">
+                        {state.errors.paymentMethod}
+                      </p>
+                    )}
                   </div>
                 </div>
                 {state.paymentMethod === "eMoney" && (
@@ -305,7 +293,7 @@ export default function FormField({
                         }
                       />
                       {state.errors.eMoneyNumber && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-red-700 text-xs focus:ring-red-700">
                           {state.errors.eMoneyNumber}
                         </p>
                       )}
@@ -329,7 +317,7 @@ export default function FormField({
                         }
                       />
                       {state.errors.eMoneyPin && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-red-700 text-xs focus:ring-red-700">
                           {state.errors.eMoneyPin}
                         </p>
                       )}
@@ -361,7 +349,11 @@ export default function FormField({
             </div>
           </div>
         </div>
-        <Summary />
+        <Summary
+          formState={state}
+          validateForm={validateForm}
+          dispatch={dispatch}
+        />
       </form>
     </div>
   );
@@ -373,15 +365,28 @@ FormField.propTypes = {
     email: PropTypes.string.isRequired,
     phoneNumber: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
-    zipCode: PropTypes.string.isRequired,
+    zipCode: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
     city: PropTypes.string.isRequired,
-    country: PropTypes.object.isRequired,
+    country: PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }).isRequired,
     paymentMethod: PropTypes.string.isRequired,
-    eMoneyNumber: PropTypes.string,
-    eMoneyPin: PropTypes.string,
-    errors: PropTypes.object.isRequired,
+    eMoneyNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    eMoneyPin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    errors: PropTypes.shape({
+      name: PropTypes.string,
+      email: PropTypes.string,
+      phoneNumber: PropTypes.string,
+      address: PropTypes.string,
+      zipCode: PropTypes.string,
+      city: PropTypes.string,
+      country: PropTypes.string,
+      paymentMethod: PropTypes.string,
+      eMoneyNumber: PropTypes.string,
+      eMoneyPin: PropTypes.string,
+    }).isRequired,
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
-  setShowToast: PropTypes.func.isRequired,
-  setToastMessage: PropTypes.func.isRequired,
 };

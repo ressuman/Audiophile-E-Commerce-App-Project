@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useUserReducer } from "../../../context/useReducer";
 import FormField from "../../components/FormField/FormField";
 import { useNavigate } from "react-router-dom";
+import { useUserReducer } from "../../context/useReducer";
 
 export default function CheckOut() {
   const [state, dispatch] = useUserReducer();
@@ -24,12 +24,7 @@ export default function CheckOut() {
           <p>{toastMessage}</p>
         </div>
       )}
-      <FormField
-        state={state}
-        dispatch={dispatch}
-        setShowToast={setShowToast}
-        setToastMessage={setToastMessage}
-      />
+      <FormField state={state} dispatch={dispatch} />
     </div>
   );
 }

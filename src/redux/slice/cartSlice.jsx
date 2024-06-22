@@ -49,9 +49,7 @@ const cartSlice = createSlice({
       saveCart(state);
     },
     clearCart: () => {
-      const newState = initialCartState;
-      saveCart(newState); // Save the state to local storage
-      return newState;
+      return initialCartState;
     },
   },
 });

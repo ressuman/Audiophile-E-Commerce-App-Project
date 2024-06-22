@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../redux/slice/cartSlice";
 
 export default function Submission({
   isOpen,
@@ -9,9 +11,16 @@ export default function Submission({
   totalAmount,
   summaryCartItems,
 }) {
+  const dispatch = useDispatch();
+
   const [showAllItems, setShowAllItems] = useState(false);
 
   const toggleShowItems = () => setShowAllItems(!showAllItems);
+
+  const handleBackToHome = () => {
+    dispatch(clearCart());
+    localStorage.clear();
+  };
 
   if (!isOpen) return null;
 
@@ -120,7 +129,7 @@ export default function Submission({
             </div>
           </div>
           <div className="mt-6">
-            <Link to="/">
+            <Link to="/" onClick={handleBackToHome}>
               <button
                 type="button"
                 className="px-6 py-2.5 w-full bg-peru hover:bg-tangelo text-white uppercase"

@@ -9,11 +9,11 @@
   -ms-transform: translateY(30px);
   -o-transform: translateY(30px);
   transform: translateY(30px);
-  -webkit-transition: opacity 4s ease-out, transform 4s ease-out;
-  -moz-transition: opacity 4s ease-out, transform 4s ease-out;
-  -ms-transition: opacity 4s ease-out, transform 4s ease-out;
-  -o-transition: opacity 4s ease-out, transform 4s ease-out;
-  transition: opacity 4s ease-out, transform 4s ease-out;
+  -webkit-transition: opacity 1s ease-out, transform 1s ease-out;
+  -moz-transition: opacity 1s ease-out, transform 1s ease-out;
+  -ms-transition: opacity 1s ease-out, transform 1s ease-out;
+  -o-transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-section.is-visible {
